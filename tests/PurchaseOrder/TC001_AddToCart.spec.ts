@@ -4,6 +4,16 @@ import { test } from '../../test-options';
 
 
 test.describe('Add to Cart', async () => {
+  test('Add to Cart without Account', async ({ page, loginlink }) => {
+    const pm = new PageManager(page)
+
+    await pm.navigationMenu().shopAll()
+    await pm.shoppingPage().selectItemAndAssert('Checkered Shirt')
+    const itemDescriptionList: string[] = await pm.shoppingPage().addtoCart('teal','S', '2')
+    const itemDescriptioninCart: string[] = await pm.shoppingPage().verifyCart()
+    await expect(itemDescriptionList).toEqual(itemDescriptioninCart)
+  })
+  
   test('Add to Cart with Account', async ({ page, loginlink }) => {
     const pm = new PageManager(page)
 
@@ -15,17 +25,8 @@ test.describe('Add to Cart', async () => {
     const itemDescriptioninCart: string[] = await pm.shoppingPage().verifyCart()
     await expect(itemDescriptionList).toEqual(itemDescriptioninCart)
   })
-
-  test('Add to Cart without Account', async ({ page, loginlink }) => {
-    const pm = new PageManager(page)
-
-    await pm.navigationMenu().shopAll()
-    await pm.shoppingPage().selectItemAndAssert('Checkered Shirt')
-    const itemDescriptionList: string[] = await pm.shoppingPage().addtoCart('teal','S', '2')
-    const itemDescriptioninCart: string[] = await pm.shoppingPage().verifyCart()
-    await expect(itemDescriptionList).toEqual(itemDescriptioninCart)
-  })
 })
+
 
 
 
