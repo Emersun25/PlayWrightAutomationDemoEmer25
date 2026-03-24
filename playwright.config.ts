@@ -15,17 +15,21 @@ export default defineConfig<TestOptions>({
   },
 
   retries: 1,
-  reporter: 'html',
-
+  reporter: [
+    ['list'],
+    ['allure-playwright']
+  ],
 
   use: {
     baseURL: process.env.URL,
     globalURL: process.env.URL,
+    screenshot: 'only-on-failure',   // capture screenshots on failure
+    video: 'retain-on-failure',      // optional: keep video on failure
     trace: 'on-first-retry',
-    video: {
-      mode: 'off',
-      size: {width: 1920, height: 1080}
-    },
+    // video: {
+    //   mode: 'off',
+    //   size: {width: 1920, height: 1080}
+    // },
   },
 
   projects: [

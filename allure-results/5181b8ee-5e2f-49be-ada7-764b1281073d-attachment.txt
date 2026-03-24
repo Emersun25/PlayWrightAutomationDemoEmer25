@@ -1,0 +1,7 @@
+Failed to get the element text: Error: locator.innerText: Target page, context or browser has been closed
+Call log:
+  - waiting for locator('div#cart-container div.flex.justify-between a')
+
+Failed to get the element text: Error: locator.innerText: Target page, context or browser has been closed
+Failed to get the element text: Error: locator.innerText: locator.innerText: Target page, context or browser has been closed
+Failed to get the element text: Error: locator.innerText: locator.innerText: locator.innerText: Target page, context or browser has been closed

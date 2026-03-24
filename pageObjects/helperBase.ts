@@ -1,5 +1,6 @@
 import { expect } from '@playwright/test';
-import { Page, Locator } from "@playwright/test";
+import { Page, Locator} from "@playwright/test";
+
 
 
 export class HelperBase{

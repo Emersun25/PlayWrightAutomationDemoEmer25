@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","18385","Add to Cart without Account","chromium","2026-03-24","passed","2026-03-24","Add to Cart","tests\PurchaseOrder\TC001_AddToCart.spec.ts","",""
+"","40552","Add to Cart with Account","chromium","2026-03-24","broken","2026-03-24","Add to Cart","tests\PurchaseOrder\TC001_AddToCart.spec.ts","",""
+"","17835","Add to Cart without Account","firefox","2026-03-24","passed","2026-03-24","Add to Cart","tests\PurchaseOrder\TC001_AddToCart.spec.ts","",""
