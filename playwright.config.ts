@@ -1,8 +1,10 @@
 import { defineConfig, devices } from '@playwright/test';
 import type { TestOptions } from './test-options';
 import * as dotenv from 'dotenv';
+import * as path from 'path';
 
-dotenv.config(); 
+const envFile = `.env.${process.env.TEST_ENV || 'dev'}`;
+dotenv.config({ path: path.resolve(process.cwd(), envFile) });
 
 export default defineConfig<TestOptions>({
   timeout: 40000,

@@ -11,6 +11,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        env: [dev]   # run against multiple environments -- add other environment here
+        #env: [dev, staging, prod]
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4   
@@ -27,7 +32,8 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test
+        run: |
+          npx cross-env TEST_ENV=${{ matrix.env }} npx playwright test
 
       - name: Upload Playwright report
         if: always()
