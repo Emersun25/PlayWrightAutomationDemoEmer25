@@ -47,6 +47,13 @@ jobs:
           name: allure-report-${{ matrix.env }}
           path: ./allure-report
 
+      - name: Deploy Allure Report to GitHub Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v4 

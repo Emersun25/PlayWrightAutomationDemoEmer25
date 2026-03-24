@@ -39,7 +39,7 @@ test.describe('Add to Cart', async () => {
 
 
 
-test.afterEach('after hook', async ({ page }, testInfo) => {
+test.afterEach('after hooks', async ({ page }, testInfo) => {
   await ReportHelper.attachOnFailure(page, testInfo);
   await page.close()
 })
