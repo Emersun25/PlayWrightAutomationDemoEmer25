@@ -1,5 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
 import type { TestOptions } from './test-options';
+import * as dotenv from 'dotenv';
+
+dotenv.config(); 
 
 export default defineConfig<TestOptions>({
   timeout: 40000,
@@ -14,8 +17,8 @@ export default defineConfig<TestOptions>({
 
 
   use: {
-    baseURL: 'https://demo.spreecommerce.org/',
-    globalURL: 'https://demo.spreecommerce.org/',
+    baseURL: process.env.URL,
+    globalURL: process.env.URL,
     trace: 'on-first-retry',
     video: {
       mode: 'off',
