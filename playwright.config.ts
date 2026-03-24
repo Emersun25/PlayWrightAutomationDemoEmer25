@@ -17,7 +17,8 @@ export default defineConfig<TestOptions>({
   retries: 1,
   reporter: [
     ['list'],
-    ['allure-playwright']
+    ['allure-playwright'],
+    ['html']
   ],
 
   use: {
